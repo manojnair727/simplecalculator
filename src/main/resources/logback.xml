@@ -1,0 +1,26 @@
+<configuration>
+
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+     	<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+    </layout>
+  </appender>
+ 
+
+  <appender name="fout" class="ch.qos.logback.core.FileAppender">
+    <file>calc.log</file>
+    <append>false</append>
+    <encoder>
+      # Pattern of log message for file appender
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</pattern>
+    </encoder>
+  </appender>
+ 
+  
+  <logger name="org.manu.math" level="${log-level:-INFO}"/>
+ 
+  <root level="${log-level:-ERROR}">
+    <appender-ref ref="stdout" />
+    <appender-ref ref="fout" />
+  </root>
+</configuration>
