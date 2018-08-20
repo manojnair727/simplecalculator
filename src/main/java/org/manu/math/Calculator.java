@@ -12,5 +12,9 @@ public class Calculator {
 		System.out.println("Logger initialized");
 
 	}
+	
+	public double calculate(String s) {
+		return 0;
+	}
 
 }
