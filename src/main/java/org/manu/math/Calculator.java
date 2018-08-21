@@ -46,7 +46,7 @@ public class Calculator {
 		}
 		LOGGER.info("MAIN" + args[0]);
 		try {
-			System.out.println(new Calculator().calculate(args[0]));
+			System.out.println(args[0]+ " = " + new Calculator().calculate(args[0]));
 		} catch(Exception e) {
 			LOGGER.error(e.getMessage(), e);
 			System.out.println(e.getMessage());
@@ -62,7 +62,9 @@ public class Calculator {
 	 */
 	public double calculate(String s) {
 		LOGGER.debug("calculate "+s);
-		return evaluate(parse(s));
+		double value = evaluate(parse(s));
+		LOGGER.info(s + " = "+value);
+		return value;
 	}
 
 	private Expression parse(String s) {
